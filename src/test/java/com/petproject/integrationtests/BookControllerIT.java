@@ -2,6 +2,7 @@ package com.petproject.integrationtests;
 
 
 import com.petproject.model.Book;
+import jakarta.transaction.Transactional;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,15 +13,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.TestPropertySource;
 
-import java.util.HashMap;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource(
         locations = "classpath:application-integrationtests.properties")
-public class BookControllerTest {
+public class BookControllerIT {
 
     @LocalServerPort
     private int port;
